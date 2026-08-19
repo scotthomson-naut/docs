@@ -1,0 +1,75 @@
+SCRIPTRONAUT QC REGISTERED PACK - LOCAL TEST
+
+1. Replace your current scriptronaut_qc framework folder with the updated
+   version from scriptronaut_qc_registered_packs_core.zip.
+
+   Keep your existing qc_modules folder where it currently lives.
+   Core now registers that folder explicitly as:
+       pack_id = scriptronaut_core
+
+2. Start Blender and confirm your existing QC categories/checks still appear.
+
+3. Install/enable scriptronaut_qc_test_pack.zip as a normal Blender addon.
+   QC Core must be enabled first.
+
+4. Open QC Checker and click the Category dropdown.
+   A new category should appear:
+       pack_test
+
+5. Select pack_test.
+   It should contain:
+       Registered Pack Test
+
+6. Run it. It should PASS.
+
+Optional Blender Python Console diagnostics:
+
+    import scriptronaut_qc_api
+    scriptronaut_qc_api.get_api_version()
+    scriptronaut_qc_api.get_registered_check_packs()
+
+Expected packs after enabling the test pack:
+    scriptronaut_core
+    scriptronaut_test_pack
+
+IMPORTANT API v1 RULE:
+    Check Python filenames must remain globally unique across all packs.
+    If two packs both contain foo.py, QC discovery reports a duplicate
+    instead of guessing which check should win.
+
+PACK LAYOUT:
+
+    my_pack/
+        __init__.py
+        checks/
+            animation/
+                my_animation_check.py
+            rigging/
+                my_rig_check.py
+            common/
+                my_common_check.py
+
+Pack register():
+
+    import scriptronaut_qc_api
+
+    scriptronaut_qc_api.register_check_pack(
+        pack_id="my_pack",
+        name="My Pack",
+        checks_path="/absolute/path/to/my_pack/checks",
+        version="1.0.0",
+    )
+
+Pack unregister():
+
+    scriptronaut_qc_api.unregister_check_pack("my_pack")
+
+JSON MODE:
+    Each pack may optionally include its own check_settings.json directly
+    inside its checks directory. If it has no JSON file, its physical folder
+    categories continue to work even when Core's Use Check Settings is on.
+
+CATEGORY EDITOR:
+    For this first API version, the existing Category Editor intentionally
+    edits only the Core qc_modules/check_settings.json. External packs are
+    treated as read-only product content.
