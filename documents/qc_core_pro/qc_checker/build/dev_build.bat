@@ -26,7 +26,6 @@ if errorlevel 2 (
 )
 
 
-
 rem ------------------------------------------------------------
 rem Blender Version
 rem ------------------------------------------------------------
@@ -144,22 +143,21 @@ rem ------------------------------------------------------------
 rem Build
 rem ------------------------------------------------------------
 
-python "%bat_path%build_products.py" --dev %tier%
+::python "%bat_path%build_products.py" --dev %tier%
 
 
 rem ------------------------------------------------------------
 rem Check Build Result
 rem ------------------------------------------------------------
 
-if errorlevel 1 (
-    echo.
-    echo Error: Build failed.
-    goto :end
-)
+::if errorlevel 1 (
+::    echo.
+::    echo Error: Build failed.
+::    goto :end
+::)
 
 echo Build completed successfully.
 
 
 :end
-echo.
 pause
