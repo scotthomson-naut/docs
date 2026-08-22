@@ -38,7 +38,6 @@ rem ------------------------------------------------------------
 rem Tier
 rem ------------------------------------------------------------
 
-
 echo Build Tier:
 echo 1. Core
 echo 2. Pro
@@ -65,15 +64,74 @@ if "%blender_version%"=="" (
 
 
 rem ------------------------------------------------------------
-rem Blender Addon Path
+rem Validate Blender Version
+rem Expected format: X.X
 rem ------------------------------------------------------------
 
-set "blender_addon_path=C:\Users\%USERNAME%\AppData\Roaming\Blender Foundation\Blender\%blender_version%\scripts\addons\qc_checker"
+set "version_major="
+set "version_minor="
+set "version_extra="
+
+for /f "tokens=1,2,3 delims=." %%A in ("%blender_version%") do (
+    set "version_major=%%A"
+    set "version_minor=%%B"
+    set "version_extra=%%C"
+)
+
+rem Major and minor must exist
+if not defined version_major goto :invalid_blender_version
+if not defined version_minor goto :invalid_blender_version
+
+rem There must not be a third component
+if defined version_extra goto :invalid_blender_version
+
+rem Major must contain numbers only
+for /f "delims=0123456789" %%A in ("%version_major%") do (
+    goto :invalid_blender_version
+)
+
+rem Minor must contain numbers only
+for /f "delims=0123456789" %%A in ("%version_minor%") do (
+    goto :invalid_blender_version
+)
+
+goto :blender_version_valid
+
+
+:invalid_blender_version
+echo Error: Invalid Blender version "%blender_version%".
+echo Please enter a version such as 4.3 or 5.1.
+goto :end
+
+
+:blender_version_valid
+
+rem ------------------------------------------------------------
+rem Blender Paths
+rem ------------------------------------------------------------
+
+set "blender_path=%APPDATA%\Blender Foundation\Blender\%blender_version%"
+set "blender_addon_path=%blender_path%\scripts\addons\qc_checker"
+
+
+rem ------------------------------------------------------------
+rem Check Blender Version Folder Exists
+rem ------------------------------------------------------------
+
+if not exist "%blender_path%\" (
+    echo.
+    echo Error: Blender %blender_version% was not found.
+    echo.
+    echo Expected:
+    echo %blender_path%
+    goto :end
+)
 
 
 rem ------------------------------------------------------------
 rem Display Build Information
 rem ------------------------------------------------------------
+
 
 echo ------------------------------------------------------------
 echo Scriptronaut QC Checker Development Build
@@ -87,6 +145,9 @@ echo %tier%
 echo.
 echo Blender Version:
 echo %blender_version%
+echo.
+echo Blender Path:
+echo %blender_path%
 echo.
 echo Blender Addon Path:
 echo %blender_addon_path%
@@ -109,6 +170,7 @@ rem Check Build Result
 rem ------------------------------------------------------------
 
 if errorlevel 1 (
+    echo.
     echo Error: Build failed.
     goto :end
 )
@@ -117,4 +179,5 @@ echo Build completed successfully.
 
 
 :end
+echo.
 pause
