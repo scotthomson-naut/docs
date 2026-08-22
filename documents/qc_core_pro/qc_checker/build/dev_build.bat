@@ -7,31 +7,6 @@ rem Variables
 rem ------------------------------------------------------------
 
 set "bat_path=%~dp0"
-set "tool_path_file=%bat_path%local_tool_path.txt"
-
-
-rem ------------------------------------------------------------
-rem Check if local tool path file exists
-rem ------------------------------------------------------------
-
-if not exist "%tool_path_file%" (
-    echo Error: local_tool_path.txt was not found.
-    echo Expected:
-    echo %tool_path_file%
-    goto :end
-)
-
-
-rem ------------------------------------------------------------
-rem Get user local tool path
-rem ------------------------------------------------------------
-
-set /p local_tool_path=<"%tool_path_file%"
-
-if "%local_tool_path%"=="" (
-    echo Error: local_tool_path.txt is empty.
-    goto :end
-)
 
 
 rem ------------------------------------------------------------
@@ -49,6 +24,7 @@ if errorlevel 2 (
 ) else (
     set "tier=core"
 )
+
 
 
 rem ------------------------------------------------------------
@@ -129,19 +105,25 @@ if not exist "%blender_path%\" (
 
 
 rem ------------------------------------------------------------
-rem Display Build Information
+rem Local qc path for sym link
 rem ------------------------------------------------------------
 
+set local_tool_path="%bat_path%dev\qc_checker_%tier%"
+
+
+rem ------------------------------------------------------------
+rem Display Build Information
+rem ------------------------------------------------------------
 
 echo ------------------------------------------------------------
 echo Scriptronaut QC Checker Development Build
 echo ------------------------------------------------------------
 echo.
-echo Local Tool Path:
-echo %local_tool_path%
-echo.
 echo Tier:
 echo %tier%
+echo.
+echo Local Tool Path:
+echo %local_tool_path%
 echo.
 echo Blender Version:
 echo %blender_version%
