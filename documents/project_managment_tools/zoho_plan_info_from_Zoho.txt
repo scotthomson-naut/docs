@@ -1,0 +1,24 @@
+ we have to be careful about the stuff that will lock when the trial as ended
+ chart created by ai...am waiting for Zoho support to give me that same list (if ever the same or different)
+ 
+ and if the ai list is right: we will already have to start paying to get to 3 projects...
+ 
+ Here is the Zoho answer (basically links towards their website) I asked for these main apps we would use:
+ 
+ Zoho Projects:
+https://www.zoho.com/projects/zohoprojects-pricing.html?zc=all
+
+Zoho Sprints:
+https://www.zoho.com/sprints/pricing.html?autoCC=US
+
+Zoho BugTracker:
+https://www.zoho.com/bugtracker/pricing.html?src=bugtracker-header
+
+Zoho Cliq:
+https://www.zoho.com/cliq/pricing.html
+
+Zoho Meeting:
+https://www.zoho.com/meeting/pricing.html
+
+Zoho Calendar:
+https://www.zoho.com/calendar/features.html?src=pd-menu
