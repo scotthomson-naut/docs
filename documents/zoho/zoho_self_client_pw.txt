@@ -1,0 +1,24 @@
+Client ID:
+1000.2Y1EV5L4Z7E6ILVYUIM4CXLISNOVDM
+
+Client Secret:
+99a4aabb026606f15ea354114e8a16a0430f5ccb89
+
+
+-------------------------------------------------
+
+1000.5dfcfea7224bf9bb64389eced9ca5632.729c515a1dbe6791885738078602b580
+
+-------------------------------------------------
+
+    "access_token": "1000.39797936c02569815e75301aa04120f7.208b60f9bf46819fcb1d64be54292081",
+    "refresh_token": "1000.210f80b5e273025c60616545f3a37fed.4aeb16491e9dce065e5b665da1964877",
+    "scope": "ZohoProjects.portals.READ ZohoProjects.projects.READ ZohoProjects.users.READ ZohoProjects.tasks.READ ZohoProjects.tasks.CREATE",
+    "api_domain": "https://www.zohoapis.ca",
+    "token_type": "Bearer",
+    "expires_in": 3600
+
+-------------------------------------------------
+
+Portal Name: scriptronaut
+Portal ID:   110003350473
