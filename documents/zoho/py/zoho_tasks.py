@@ -1,10 +1,14 @@
+# Python imports
+import sys
 import urllib.request
 import urllib.error
 import urllib.parse
 import json
 
+# Local imports
 from zoho_auth import get_access_token
 
+sys.stdout.reconfigure(encoding="utf-8")
 
 # ----------------------------------------------------------------------
 # Zoho configuration
@@ -21,19 +25,9 @@ PROJECT_URL = (
 
 TASKS_URL = f"{PROJECT_URL}/tasks"
 
-
-# ----------------------------------------------------------------------
-# Known project users
-#
-# IMPORTANT:
-# These are Zoho User IDs (ZUID), not the longer Zoho Projects user IDs.
-# ----------------------------------------------------------------------
-
-USERS = {
-    "Scot Thomson": "110003353082",
-    "Stéphane Barbin": "110003336135",
+TASKLIST_FALLBACKS = {
+    "general": "186620000000081029",
 }
-
 
 # ----------------------------------------------------------------------
 # Known task lists
@@ -54,7 +48,8 @@ TASKLISTS = {
 # ----------------------------------------------------------------------
 
 def api_request(url, method="GET", data=None):
-
+    """
+    """
     access_token = get_access_token()
 
     headers = {
@@ -99,7 +94,8 @@ def api_request(url, method="GET", data=None):
 # ----------------------------------------------------------------------
 
 def get_task_statuses():
-
+    """
+    """
     url = (
         f"{BASE_URL}/portal/{PORTAL_ID}/settings/global-statuses"
         f"?module=tasks"
@@ -123,9 +119,9 @@ def get_task_statuses():
 
 
 def get_status_id(status_name):
-
+    """
+    """
     statuses = get_task_statuses()
-
     status_id = statuses.get(status_name.lower())
 
     if not status_id:
@@ -137,27 +133,322 @@ def get_status_id(status_name):
 
 
 # ----------------------------------------------------------------------
-# Task-list lookup
+# Lookup Functions
 # ----------------------------------------------------------------------
 
-def get_tasklist_id(tasklist_name):
+def get_tasks():
+    """
+    """
+    tasks = []
+    page = 1
 
-    tasklist_id = TASKLISTS.get(tasklist_name)
+    while True:
+        url = f"{TASKS_URL}?page={page}&per_page=100"
+        status_code, result = api_request(url)
 
-    if not tasklist_id:
-        raise ValueError(
-            f"Unknown Zoho task list: {tasklist_name}"
+        if status_code != 200 or not result:
+            raise RuntimeError(
+                "Unable to retrieve Zoho project tasks."
+            )
+
+        tasks.extend(result.get("tasks", []))
+
+        page_info = result.get("page_info", {})
+
+        if not page_info.get("has_next_page"):
+            break
+
+        page += 1
+
+    return tasks
+
+
+def get_task(task_id):
+    """
+    """
+    url = f"{TASKS_URL}/{task_id}"
+    status_code, task = api_request(url)
+    if status_code != 200 or not task:
+        raise RuntimeError(
+            f"Unable to retrieve Zoho task: {task_id}"
         )
 
-    return tasklist_id
+    return task
+
+
+def get_tasklist_id(tasklist_name, tasklists=None):
+    """
+    """
+    if tasklists is None:
+        tasklists = get_project_tasklists()
+
+    key = tasklist_name.lower()
+
+    # First try dynamically discovered Task Lists
+    tasklist = tasklists.get(key)
+
+    if tasklist:
+        return tasklist["id"]
+
+    # Fall back only when the list cannot be discovered through tasks
+    fallback_id = TASKLIST_FALLBACKS.get(key)
+
+    if fallback_id:
+        return fallback_id
+
+    available = [
+        info["name"]
+        for info in tasklists.values()
+    ]
+
+    raise ValueError(
+        f"Unknown Zoho task list: {tasklist_name}\n"
+        f"Available task lists: {', '.join(available)}"
+    )
+
+
+def update_task(
+    task_id,
+    name=None,
+    owner=None,
+    priority=None,
+    status=None,
+    start_date=None,
+    due_date=None,
+    description=None,
+):
+    """
+    """
+    update_data = {}
+
+    # Name
+    if name is not None:
+        update_data["name"] = name
+
+    # Description
+    if description is not None:
+        update_data["description"] = description
+
+    # Priority
+    if priority is not None:
+        update_data["priority"] = priority.lower()
+
+    # Status
+    if status is not None:
+        status_id = get_status_id(status)
+        update_data["status"] = {
+            "id": status_id
+        }
+
+    # Owner
+    if owner is not None:
+        zuid = get_user_zuid(owner)
+        update_data["owners_and_work"] = {
+            "owners": [
+                {
+                    "zuid": zuid
+                }
+            ]
+        }
+
+    # Start Date
+    if start_date is not None:
+        update_data["start_date"] = start_date
+
+    # Due Date
+    if due_date is not None:
+        update_data["end_date"] = due_date
+
+    if not update_data:
+        raise ValueError(
+            "No task properties were supplied to update."
+        )
+
+    url = f"{TASKS_URL}/{task_id}"
+
+    print("\nUpdating Zoho task...")
+    print("Task ID:", task_id)
+
+    status_code, task = api_request(
+        url,
+        method="PATCH",
+        data=update_data,
+    )
+
+    if status_code != 200 or not task:
+        raise RuntimeError(
+            f"Unable to update Zoho task: {task_id}"
+        )
+
+    print("Task updated.")
+
+    return task
 
 
 # ----------------------------------------------------------------------
-# User lookup
+# Find tasks
 # ----------------------------------------------------------------------
+
+def find_tasks(
+    name=None,
+    tasklist=None,
+    status=None,
+    owner=None,
+):
+    """
+    """
+    tasks = get_tasks()
+    matches = []
+    for task in tasks:
+        # ----------------------------------------------------------
+        # Name
+        # ----------------------------------------------------------
+
+        if name is not None:
+            task_name = task.get("name", "")
+            if task_name.lower() != name.lower():
+                continue
+
+        # ----------------------------------------------------------
+        # Task List
+        # ----------------------------------------------------------
+
+        if tasklist is not None:
+
+            tasklist_data = task.get("tasklist") or {}
+            tasklist_name = tasklist_data.get("name", "")
+
+            if tasklist_name.lower() != tasklist.lower():
+                continue
+
+        # ----------------------------------------------------------
+        # Status
+        # ----------------------------------------------------------
+
+        if status is not None:
+            status_data = task.get("status") or {}
+            status_name = status_data.get("name", "")
+
+            if status_name.lower() != status.lower():
+                continue
+
+        # ----------------------------------------------------------
+        # Owner
+        # ----------------------------------------------------------
+
+        if owner is not None:
+            owners = task.get("owners") or []
+            owner_found = False
+
+            for task_owner in owners:
+                owner_name = (
+                    task_owner.get("full_name")
+                    or task_owner.get("name")
+                    or ""
+                )
+
+                if owner_name.lower() == owner.lower():
+                    owner_found = True
+                    break
+
+            if not owner_found:
+                continue
+
+        matches.append(task)
+
+    return matches
+
+
+def find_task(name, tasklist=None):
+    """
+    """
+    matches = find_tasks(
+        name=name,
+        tasklist=tasklist,
+    )
+
+    if not matches:
+        return None
+
+    if len(matches) > 1:
+        raise ValueError(
+            f"More than one task named '{name}' was found. "
+            f"Specify a task list to narrow the search."
+        )
+
+    return matches[0]
+
+
+def delete_task(task_id):
+    """
+    """
+    url = f"{TASKS_URL}/{task_id}"
+
+    print("\nDeleting Zoho task...")
+    print("Task ID:", task_id)
+
+    status_code, result = api_request(
+        url,
+        method="DELETE",
+    )
+
+    # Zoho may return 200 or 204 depending on the response.
+    if status_code not in (200, 204):
+        raise RuntimeError(
+            f"Unable to delete Zoho task: {task_id}"
+        )
+
+    print("Task deleted.")
+
+    return True
+
+
+def get_project_tasklists():
+    """
+    """
+    tasklists = {}
+    page = 1
+
+    while True:
+        url = f"{TASKS_URL}?page={page}&per_page=100"
+
+        status_code, result = api_request(url)
+
+        if status_code != 200 or not result:
+            raise RuntimeError(
+                "Unable to retrieve Zoho project tasks."
+            )
+
+        tasks = result.get("tasks", [])
+
+        for task in tasks:
+            tasklist = task.get("tasklist")
+
+            if not isinstance(tasklist, dict):
+                continue
+
+            name = tasklist.get("name")
+            tasklist_id = tasklist.get("id")
+
+            if name and tasklist_id:
+                tasklists[name.lower()] = {
+                    "name": name,
+                    "id": str(tasklist_id),
+                }
+
+        page_info = result.get("page_info", {})
+
+        if not page_info.get("has_next_page"):
+            break
+
+        page += 1
+
+    return tasklists
+
 
 def get_user_zuid(user_name):
-
+    """
+    """
     zuid = USERS.get(user_name)
 
     if not zuid:
@@ -166,6 +457,54 @@ def get_user_zuid(user_name):
         )
 
     return zuid
+
+
+def get_project_users():
+    """
+    """
+    url = f"{PROJECT_URL}/users"
+
+    status_code, result = api_request(url)
+
+    if status_code != 200 or not result:
+        raise RuntimeError(
+            "Unable to retrieve Zoho project users."
+        )
+
+    users = {}
+    for user in result.get("users", []):
+        name = user.get("full_name")
+        zuid = user.get("zuid")
+
+        if name and zuid:
+            users[name.lower()] = {
+                "name": name,
+                "zuid": str(zuid),
+                "project_user_id": str(user.get("id", "")),
+                "email": user.get("email", ""),
+            }
+
+    return users
+
+
+def get_user_zuid(user_name):
+    """
+    """
+    users = get_project_users()
+    user = users.get(user_name.lower())
+
+    if not user:
+        available = [
+            info["name"]
+            for info in users.values()
+        ]
+
+        raise ValueError(
+            f"Unknown Zoho project user: {user_name}\n"
+            f"Available users: {', '.join(available)}"
+        )
+
+    return user["zuid"]
 
 
 # ----------------------------------------------------------------------
@@ -182,6 +521,8 @@ def create_task(
     due_date=None,
     description=None,
 ):
+    """
+    """
 
     # --------------------------------------------------------------
     # CREATE payload
@@ -220,13 +561,6 @@ def create_task(
 
     print("\nTask created.")
     print("Task ID:", task_id)
-
-    # --------------------------------------------------------------
-    # UPDATE payload
-    #
-    # Some fields have proven more reliable when PATCHed after the
-    # task has been created.
-    # --------------------------------------------------------------
 
     update_data = {}
 
@@ -303,28 +637,25 @@ def create_task(
 # ----------------------------------------------------------------------
 # Test
 # ----------------------------------------------------------------------
-
 if __name__ == "__main__":
 
-    task = create_task(
-        name="Reusable API Function Test",
+    print("\nFIND DELETE TEST TASK")
+    print("=" * 70)
+
+    task = find_task(
+        "API Delete Test",
         tasklist="UI Panel",
-        owner="Scot Thomson",
-        priority="high",
-        status="In Progress",
-        start_date="2026-09-16",
-        due_date="2026-09-18",
-        description="Created using the reusable zoho_tasks module.",
     )
 
     if task:
-        print("\n" + "=" * 70)
-        print("SUCCESS")
-        print("=" * 70)
 
-        print("Task ID: ", task.get("id"))
-        print("Name:    ", task.get("name"))
-        print("Priority:", task.get("priority"))
-        print("Status:  ", task.get("status"))
-        print("Start:   ", task.get("start_date"))
-        print("Due:     ", task.get("end_date"))
+        print("Found!")
+        print("Name:   ", task.get("name"))
+        print("Task ID:", task.get("id"))
+        print("Task Key:   ", task.get("prefix"))
+
+        print("\nFULL TASK")
+        print(json.dumps(task, indent=4))
+
+    else:
+        print("API Delete Test was not found.")
