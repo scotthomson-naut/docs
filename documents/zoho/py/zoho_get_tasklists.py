@@ -12,28 +12,17 @@ PORTAL_ID = "110003350473"
 PROJECT_ID = "18662000000048092"
 ACCESS_TOKEN = get_access_token()
 
-
 url = (
     f"https://projects.zohocloud.ca/api/v3/"
-    f"portal/{PORTAL_ID}/projects/{PROJECT_ID}/tasks"
+    f"portal/{PORTAL_ID}/projects/{PROJECT_ID}/tasklists"
 )
-
-task_data = {
-    "name": "Scriptronaut API Test Task Day2",
-    "description": "This 2nd task was created using the Zoho Projects API.",
-    "priority": "high"
-}
-
-data = json.dumps(task_data).encode("utf-8")
 
 request = urllib.request.Request(
     url,
-    data=data,
     headers={
-        "Authorization": f"Bearer {ACCESS_TOKEN}",
-        "Content-Type": "application/json"
+        "Authorization": f"Bearer {ACCESS_TOKEN}"
     },
-    method="POST"
+    method="GET"
 )
 
 try:
