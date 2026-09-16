@@ -1,17 +1,15 @@
-# Python imports
 import urllib.request
 import urllib.error
 import json
 
-# Local imports
 from zoho_auth import get_access_token
 
 
-# Credentials
 PORTAL_ID = "110003350473"
 PROJECT_ID = "18662000000048092"
-ACCESS_TOKEN = get_access_token()
+TASKLIST_ID = "18662000000047879"
 
+ACCESS_TOKEN = get_access_token()
 
 url = (
     f"https://projects.zohocloud.ca/api/v3/"
@@ -19,9 +17,11 @@ url = (
 )
 
 task_data = {
-    "name": "Scriptronaut API Test Task Day2",
-    "description": "This 2nd task was created using the Zoho Projects API.",
-    "priority": "high"
+    "name": "API Test - UI Panel",
+    "description": "Testing creation of a task directly in the UI Panel task list.",
+    "tasklist": {
+        "id": TASKLIST_ID
+    }
 }
 
 data = json.dumps(task_data).encode("utf-8")
@@ -41,6 +41,17 @@ try:
         result = json.loads(response.read().decode("utf-8"))
 
         print("Status:", response.status)
+
+        print("\nTASK CREATED")
+        print("-" * 60)
+        print("Task ID:   ", result.get("id"))
+        print("Name:      ", result.get("name"))
+
+        tasklist = result.get("tasklist", {})
+        print("Task List: ", tasklist.get("name"))
+        print("List ID:   ", tasklist.get("id"))
+
+        print("\nFull response:")
         print(json.dumps(result, indent=4))
 
 except urllib.error.HTTPError as error:

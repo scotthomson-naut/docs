@@ -46,3 +46,2210 @@ Status: 200
 
 Portal Name: scriptronaut
 Portal ID:   110003350473
+-------------------------------------------------
+
+
+
+
+
+TASK FIELD METADATA
+--------------------------------------------------------------------------------
+[
+    {
+        "id": "18662000000000161",
+        "field_name": "teams",
+        "display_name": "Associated Team",
+        "field_type": "teampicklist",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_options_allowed": 500,
+                "max_options_select": 10,
+                "options_type": "default"
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": true,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000000164",
+        "field_name": "owner",
+        "display_name": "Owner",
+        "field_type": "userpicklist",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "userid_type": "zuid",
+                "userlist_type": "all_users",
+                "max_options_allowed": 1800,
+                "max_options_select": 1,
+                "options_type": "user"
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": true,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000000167",
+        "field_name": "status",
+        "display_name": "Status",
+        "field_type": "picklist",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_options_allowed": 1800,
+                "max_options_select": 1,
+                "options_type": "status"
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": true,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000000170",
+        "field_name": "start_date",
+        "display_name": "Start Date",
+        "field_type": "Date",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "date_storage_type": "sys_millis"
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": true,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000000173",
+        "field_name": "end_date",
+        "display_name": "Due Date",
+        "field_type": "Date",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "date_storage_type": "sys_millis"
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": true,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000000176",
+        "field_name": "duration",
+        "display_name": "Duration",
+        "field_type": "singleline",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 200
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000000179",
+        "field_name": "priority",
+        "display_name": "Priority",
+        "field_type": "picklist",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_options_allowed": 1800,
+                "max_options_select": 1,
+                "options_type": "default"
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": true,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000000182",
+        "field_name": "completion_percentage",
+        "display_name": "Completion Percentage",
+        "field_type": "singleline",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 200
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": true,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000000185",
+        "field_name": "rate_per_hour",
+        "display_name": "Rate Per Hour",
+        "field_type": "Double",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 17,
+                "precision_value": 0
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false,
+                "layout_helper_message": "This field will appear only if</br>1. Revenue budget is enabled for the project or if your portal is integrated with Zoho Invoice / Zoho Books AND</br>2. Billing method of the project is based on Task / Issues."
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000000188",
+        "field_name": "tags",
+        "display_name": "Tags",
+        "field_type": "picklist",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_options_allowed": 1800,
+                "max_options_select": 1,
+                "options_type": "default"
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": true,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false,
+                "layout_helper_message": "Enable tags from Settings <span class='para-bc'>&rtrif;</span> Portal configuration <span class='para-bc'>&rtrif;</span> Org settings <span class='para-bc'>&rtrif;</span> Projects & Budget"
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000000191",
+        "field_name": "is_reminder_set",
+        "display_name": "Reminder",
+        "field_type": "picklist",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_options_allowed": 1800,
+                "max_options_select": 1,
+                "options_type": "default"
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": true,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000000194",
+        "field_name": "is_recurrence_set",
+        "display_name": "Recurrence",
+        "field_type": "picklist",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_options_allowed": 1800,
+                "max_options_select": 1,
+                "options_type": "default"
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": true,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000000197",
+        "field_name": "billing_type",
+        "display_name": "Billing Type",
+        "field_type": "picklist",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_options_allowed": 1800,
+                "max_options_select": 1,
+                "options_type": "default"
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": true,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000000203",
+        "field_name": "work",
+        "display_name": "Work Hours",
+        "field_type": "singleline",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 200
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": true,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000000206",
+        "field_name": "time_log",
+        "display_name": "Timelog",
+        "field_type": "singleline",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 200
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000000209",
+        "field_name": "difference",
+        "display_name": "Difference",
+        "field_type": "singleline",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 200
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000000212",
+        "field_name": "created_by",
+        "display_name": "Created By",
+        "field_type": "singleline",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 200
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000000215",
+        "field_name": "tasklist",
+        "display_name": "Task List",
+        "field_type": "multiline",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 1000
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000000218",
+        "field_name": "milestone",
+        "display_name": "Milestone",
+        "field_type": "singleline",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 200
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000000221",
+        "field_name": "completed_on",
+        "display_name": "Completed Date",
+        "field_type": "Date",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "date_storage_type": "sys_millis"
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": true,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000000224",
+        "field_name": "task_actual_hours",
+        "display_name": "Actual hours",
+        "field_type": "Double",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 17,
+                "precision_value": 0
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000000227",
+        "field_name": "planned_cost",
+        "display_name": "Planned cost",
+        "field_type": "Double",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 17,
+                "precision_value": 0
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000000230",
+        "field_name": "actual_cost",
+        "display_name": "Actual cost",
+        "field_type": "Double",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 17,
+                "precision_value": 0
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000000233",
+        "field_name": "balance",
+        "display_name": "Budget Balance",
+        "field_type": "Double",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 17,
+                "precision_value": 0
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000000236",
+        "field_name": "created_time",
+        "display_name": "Created On",
+        "field_type": "Date",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "date_storage_type": "sys_millis"
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000000239",
+        "field_name": "forecasted_hours",
+        "display_name": "Forecasted Hours",
+        "field_type": "Double",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 17,
+                "precision_value": 0
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000000242",
+        "field_name": "forecasted_cost",
+        "display_name": "Forecasted Cost",
+        "field_type": "Double",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 17,
+                "precision_value": 0
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000000245",
+        "field_name": "bcy_planned_cost",
+        "display_name": "Planned cost (USD)",
+        "field_type": "Double",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 17,
+                "precision_value": 0
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000000248",
+        "field_name": "bcy_actual_cost",
+        "display_name": "Actual cost (USD)",
+        "field_type": "Double",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 17,
+                "precision_value": 0
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000000251",
+        "field_name": "bcy_forecasted_cost",
+        "display_name": "Forecasted cost (USD)",
+        "field_type": "Double",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 17,
+                "precision_value": 0
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000000278",
+        "field_name": "planned_value",
+        "display_name": "Planned Value",
+        "field_type": "Double",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 17,
+                "precision_value": 0
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000000281",
+        "field_name": "earned_value",
+        "display_name": "Earned Value",
+        "field_type": "Double",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 17,
+                "precision_value": 0
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000000284",
+        "field_name": "schedule_variance",
+        "display_name": "Schedule Variance",
+        "field_type": "Double",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 17,
+                "precision_value": 0
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000000287",
+        "field_name": "cost_variance",
+        "display_name": "Cost Variance",
+        "field_type": "Double",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 17,
+                "precision_value": 0
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000000290",
+        "field_name": "bcy_planned_value",
+        "display_name": "Planned Value (USD)",
+        "field_type": "Double",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 17,
+                "precision_value": 0
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000000293",
+        "field_name": "bcy_earned_value",
+        "display_name": "Earned Value (USD)",
+        "field_type": "Double",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 17,
+                "precision_value": 0
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000000296",
+        "field_name": "bcy_schedule_variance",
+        "display_name": "Schedule Variance (USD)",
+        "field_type": "Double",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 17,
+                "precision_value": 0
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000000299",
+        "field_name": "bcy_cost_variance",
+        "display_name": "Cost Variance (USD)",
+        "field_type": "Double",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 17,
+                "precision_value": 0
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000000302",
+        "field_name": "cost_budget",
+        "display_name": "Cost Budget",
+        "field_type": "Double",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 17,
+                "precision_value": 0
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false,
+                "layout_helper_message": "<div class='pb10'>This field will appear only if following conditions are true.</div><div class='pb10'>1. Budget should be enabled for the project or your portal should be integrated with Zoho Invoice / Zoho Books.</div><div class='pb10'>2. Budget type of project should be based on Task Amount / Task Hours.</div>"
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000000305",
+        "field_name": "cost_budget_threshold",
+        "display_name": "Cost Budget Threshold",
+        "field_type": "Double",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 17,
+                "precision_value": 0
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false,
+                "layout_helper_message": "<div class='pb10'>This field will appear only if following conditions are true.</div><div class='pb10'>1. Budget should be enabled for the project or your portal should be integrated with Zoho Invoice / Zoho Books.</div><div class='pb10'>2. Budget type of project should be based on Task Amount / Task Hours.</div>"
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000000308",
+        "field_name": "bcy_budget",
+        "display_name": "Cost Budget (USD)",
+        "field_type": "Double",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 17,
+                "precision_value": 0
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000000323",
+        "field_name": "predecessor",
+        "display_name": "Predecessors",
+        "field_type": "multipicklist",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_options_allowed": 1800,
+                "max_options_select": 10,
+                "options_type": "default"
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000000326",
+        "field_name": "successor",
+        "display_name": "Successors",
+        "field_type": "multipicklist",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_options_allowed": 1800,
+                "max_options_select": 10,
+                "options_type": "default"
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000000329",
+        "field_name": "cost_per_hour",
+        "display_name": "Cost Per Hour",
+        "field_type": "Double",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 17,
+                "precision_value": 0
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000000332",
+        "field_name": "revenue_budget",
+        "display_name": "Revenue Budget",
+        "field_type": "Double",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 17,
+                "precision_value": 0
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false,
+                "layout_helper_message": "<div class='pb10'>This field will appear only if following conditions are true.</div><div class='pb10'>1. Revenue budget should be enabled for the project or your portal should be integrated with Zoho Invoice / Zoho Books.</div><div class='pb10'>2. Budget type of project should be based on Task Amount / Task Hours.</div>"
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000000335",
+        "field_name": "planned_revenue",
+        "display_name": "Planned Revenue",
+        "field_type": "Double",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 17,
+                "precision_value": 0
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000000338",
+        "field_name": "actual_revenue",
+        "display_name": "Actual Revenue",
+        "field_type": "Double",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 17,
+                "precision_value": 0
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000000341",
+        "field_name": "forecasted_revenue",
+        "display_name": "Forecasted Revenue",
+        "field_type": "Double",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 17,
+                "precision_value": 0
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000004005",
+        "field_name": "added_by_zpuid",
+        "display_name": "Added By",
+        "field_type": "userpicklist",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "userid_type": "zuid",
+                "userlist_type": "all_users",
+                "max_options_allowed": 1800,
+                "max_options_select": 1,
+                "options_type": "user"
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000004008",
+        "field_name": "added_via",
+        "display_name": "Added Via",
+        "field_type": "singleline",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 200
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000004011",
+        "field_name": "allowed_log_hours",
+        "display_name": "Allowed Log Hours",
+        "field_type": "boolean",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {},
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000004014",
+        "field_name": "is_sprints_task",
+        "display_name": "Is Sprint Task",
+        "field_type": "boolean",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {},
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000004017",
+        "field_name": "is_trashed",
+        "display_name": "Is Trashed",
+        "field_type": "picklist",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_options_allowed": 1800,
+                "max_options_select": 1,
+                "options_type": "default"
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000004020",
+        "field_name": "is_bug_mapped",
+        "display_name": "Is Bug Associated",
+        "field_type": "boolean",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {},
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000004023",
+        "field_name": "is_completed",
+        "display_name": "Is Completed",
+        "field_type": "boolean",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {},
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000004026",
+        "field_name": "is_doc_associated",
+        "display_name": "Is Document Associated",
+        "field_type": "boolean",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {},
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000004029",
+        "field_name": "is_duration_work",
+        "display_name": "Is Duration Work",
+        "field_type": "boolean",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {},
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000004032",
+        "field_name": "is_forum_associated",
+        "display_name": "Is Forum Associated",
+        "field_type": "boolean",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {},
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000004035",
+        "field_name": "is_milestone",
+        "display_name": "Is Milestone Associated",
+        "field_type": "boolean",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {},
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000004038",
+        "field_name": "is_notes_added",
+        "display_name": "Is Notes Added",
+        "field_type": "boolean",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {},
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000004041",
+        "field_name": "is_parent",
+        "display_name": "Is Parent",
+        "field_type": "boolean",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {},
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000004044",
+        "field_name": "is_private",
+        "display_name": "Is Private",
+        "field_type": "boolean",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {},
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000004047",
+        "field_name": "nonbillable_log_hours",
+        "display_name": "Non-billable Log Hours",
+        "field_type": "singleline",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 200
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000004050",
+        "field_name": "sprints_item_id",
+        "display_name": "Sprints Item ID",
+        "field_type": "Numeric",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 19,
+                "precision_value": 0
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000004053",
+        "field_name": "sprints_id",
+        "display_name": "Sprints ID",
+        "field_type": "Numeric",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 19,
+                "precision_value": 0
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000004056",
+        "field_name": "dependency_status",
+        "display_name": "Dependency status",
+        "field_type": "Numeric",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 19,
+                "precision_value": 0
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000004059",
+        "field_name": "global_percentage_sequence",
+        "display_name": "Global Percentage Sequence",
+        "field_type": "Numeric",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 19,
+                "precision_value": 0
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000004062",
+        "field_name": "global_priority_sequence",
+        "display_name": "Global Priority Sequence",
+        "field_type": "Numeric",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 19,
+                "precision_value": 0
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000004065",
+        "field_name": "global_status_sequence",
+        "display_name": "Global Status Sequence",
+        "field_type": "Numeric",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 19,
+                "precision_value": 0
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000004068",
+        "field_name": "last_updated_time",
+        "display_name": "Last Modified Time",
+        "field_type": "dateandtime",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "date_storage_type": "sys_millis"
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000004071",
+        "field_name": "parent_task",
+        "display_name": "Parent task",
+        "field_type": "picklist",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_options_allowed": 1800,
+                "max_options_select": 1,
+                "options_type": "default"
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000004074",
+        "field_name": "percentage_sequence",
+        "display_name": "Percentage Sequence",
+        "field_type": "Numeric",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 19,
+                "precision_value": 0
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000004077",
+        "field_name": "priority_sequence",
+        "display_name": "Priority Sequence",
+        "field_type": "Numeric",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 19,
+                "precision_value": 0
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000004080",
+        "field_name": "root_task",
+        "display_name": "Root Task",
+        "field_type": "picklist",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_options_allowed": 1800,
+                "max_options_select": 1,
+                "options_type": "default"
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000004083",
+        "field_name": "tasklist_id",
+        "display_name": "Task List",
+        "field_type": "picklist",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_options_allowed": 1800,
+                "max_options_select": 1,
+                "options_type": "default"
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000004086",
+        "field_name": "description",
+        "display_name": "Task Description",
+        "field_type": "multiline",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 1000
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000004089",
+        "field_name": "status_sequence",
+        "display_name": "Status Sequence",
+        "field_type": "Numeric",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 19,
+                "precision_value": 0
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000004092",
+        "field_name": "subtask_sequence",
+        "display_name": "Sub task Sequence",
+        "field_type": "Numeric",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 19,
+                "precision_value": 0
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000004095",
+        "field_name": "todo_sequence",
+        "display_name": "Task Order Sequence",
+        "field_type": "Numeric",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 19,
+                "precision_value": 0
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000004098",
+        "field_name": "task_number",
+        "display_name": "Prefix Sequence",
+        "field_type": "Numeric",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 19,
+                "precision_value": 0
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000004101",
+        "field_name": "name",
+        "display_name": "Task Name",
+        "field_type": "singleline",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 200
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000004104",
+        "field_name": "unit_of_time",
+        "display_name": "Unit of Time",
+        "field_type": "singleline",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 200
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000004107",
+        "field_name": "work_type",
+        "display_name": "Work Type",
+        "field_type": "picklist",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_options_allowed": 1800,
+                "max_options_select": 1,
+                "options_type": "default"
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000005035",
+        "field_name": "followers",
+        "display_name": "Followers",
+        "field_type": "multiuserpicklist",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "userid_type": "zpuid",
+                "userlist_type": "all_users",
+                "max_options_allowed": 1800,
+                "max_options_select": 10,
+                "options_type": "user"
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000007007",
+        "field_name": "hourly_budget",
+        "display_name": "Budgeted Hours",
+        "field_type": "Double",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 17,
+                "precision_value": 0
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000007009",
+        "field_name": "hourly_budget_threshold",
+        "display_name": "Budgeted Hours Threshold",
+        "field_type": "Double",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 17,
+                "precision_value": 0
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000019005",
+        "field_name": "id",
+        "display_name": "Task ID",
+        "field_type": "picklist",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_options_allowed": 1800,
+                "max_options_select": 1,
+                "options_type": "default"
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000019007",
+        "field_name": "has_blueprint",
+        "display_name": "Has BluePrint",
+        "field_type": "checkbox",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {},
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000024005",
+        "field_name": "milestone_id",
+        "display_name": "Milestone",
+        "field_type": "picklist",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_options_allowed": 1800,
+                "max_options_select": 1,
+                "options_type": "default"
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000037001",
+        "field_name": "task_summary_comment",
+        "display_name": "Comments",
+        "field_type": "singleline",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 200
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000037002",
+        "field_name": "task_summary_attachment",
+        "display_name": "Attachments",
+        "field_type": "singleline",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 200
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000038001",
+        "field_name": "critical_tasks",
+        "display_name": "Critical {0}",
+        "field_type": "checkbox",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {},
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000038002",
+        "field_name": "time_span",
+        "display_name": "Time Span",
+        "field_type": "Date",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "date_storage_type": "sys_millis"
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000038003",
+        "field_name": "budget_health",
+        "display_name": "Budget Health",
+        "field_type": "checkbox",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {},
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000043001",
+        "field_name": "age_since_created",
+        "display_name": "Age (days since created)",
+        "field_type": "Numeric",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 19,
+                "precision_value": 0
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000043002",
+        "field_name": "age_since_due",
+        "display_name": "Age (days since created)",
+        "field_type": "Numeric",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 19,
+                "precision_value": 0
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    },
+    {
+        "id": "18662000000043003",
+        "field_name": "desk_associated",
+        "display_name": "{1} From Zoho Desk",
+        "field_type": "singleline",
+        "is_default": true,
+        "field_property": {
+            "field_type_properties": {
+                "max_length": 200
+            },
+            "is_pii": false,
+            "is_encrypted": false,
+            "metadata_property": {
+                "is_property_mutable": false,
+                "is_removable": false,
+                "is_mandate_enabled": false,
+                "has_field_level_permission": false
+            },
+            "scope": "global_scope"
+        },
+        "is_deactivated": false
+    }
+]
