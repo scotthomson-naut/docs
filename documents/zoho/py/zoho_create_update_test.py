@@ -1,6 +1,7 @@
 import urllib.request
 import urllib.error
 import json
+from datetime import datetime, timezone
 
 from zoho_auth import get_access_token
 
@@ -97,6 +98,7 @@ print("Task List ID:   ", tasklist.get("id"))
 # 2. UPDATE EXACT TASK WE JUST CREATED
 # ---------------------------------------------------------
 
+
 update_url = f"{BASE_URL}/{task_id}"
 
 print("\nAssigning task to Scot...")
@@ -105,10 +107,21 @@ print(task_id)
 print("PATCH URL:")
 print(update_url)
 
+
+START_DATE = "2026-09-16"
+DUE_DATE = "2026-09-18"
+
 SCOT_ZUID = "110003353082"
+IN_PROGRESS_STATUS_ID = "18662000000000362"
+
 
 update_data = {
+    "start_date": START_DATE,
+    "end_date": DUE_DATE,
     "priority": "high",
+    "status": {
+        "id": IN_PROGRESS_STATUS_ID
+    },
     "owners_and_work": {
         "owners": [
             {
