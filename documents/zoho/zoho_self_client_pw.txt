@@ -19,6 +19,15 @@ Scene                          18662000000047927
 UI Panel                       18662000000047879
 UVs                            18662000000047941
 
+-------------------------------------------------
+{
+    "access_token": "1000.22677f61c8dbd15f74bbfc51ccc6e299.5d2a9169720d263d0b83189e2f5d163f",
+    "refresh_token": "1000.e9369d90696a0d19362bd86896e3e84a.181c848f11cd31e224e6329d66e3805b",
+    "scope": "ZohoProjects.portals.READ ZohoProjects.portals.CREATE ZohoProjects.projects.ALL ZohoProjects.tasks.ALL ZohoProjects.users.READ ZohoProjects.custom_fields.READ WorkDrive.workspace.ALL WorkDrive.files.ALL",
+    "api_domain": "https://www.zohoapis.ca",
+    "token_type": "Bearer",
+    "expires_in": 3600
+}
 
 -------------------------------------------------
 1000.0ce35dac49cfb33238830d2fbe3f79bf.00c45ab2432cf1d7b9fadb6e8c4a6f14
