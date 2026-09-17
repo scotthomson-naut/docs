@@ -20,36 +20,17 @@ UI Panel                       18662000000047879
 UVs                            18662000000047941
 
 -------------------------------------------------
+1000.cf83f854d888d4f170c4cfb5e5fb995b.e1c03524a68a0081c49db73a3dc87bec
 {
-    "access_token": "1000.22677f61c8dbd15f74bbfc51ccc6e299.5d2a9169720d263d0b83189e2f5d163f",
-    "refresh_token": "1000.e9369d90696a0d19362bd86896e3e84a.181c848f11cd31e224e6329d66e3805b",
-    "scope": "ZohoProjects.portals.READ ZohoProjects.portals.CREATE ZohoProjects.projects.ALL ZohoProjects.tasks.ALL ZohoProjects.users.READ ZohoProjects.custom_fields.READ WorkDrive.workspace.ALL WorkDrive.files.ALL",
+    "access_token": "1000.e3db1ed2254a7fef915b51b4649838e9.53c4d68cbc13c38faeb5e8806d830803",
+    "refresh_token": "1000.503dfc5ba47132e241f700025f78de20.ab49939e5b3000f07b4db41a720803ab",
+    "scope": "ZohoProjects.portals.READ ZohoProjects.portals.CREATE ZohoProjects.projects.ALL ZohoProjects.tasks.ALL ZohoProjects.users.READ ZohoProjects.custom_fields.READ WorkDrive.workspace.ALL WorkDrive.files.ALL ZohoProjects.tags.ALL",
     "api_domain": "https://www.zohoapis.ca",
     "token_type": "Bearer",
     "expires_in": 3600
 }
 
--------------------------------------------------
-1000.0ce35dac49cfb33238830d2fbe3f79bf.00c45ab2432cf1d7b9fadb6e8c4a6f14
 
-Status: 200
-{
-    "access_token": "1000.289d03c6894bb90707813a0a75e0a4a0.1890de4475f0411a38729696bce8cb03",
-    "refresh_token": "1000.3c32dcfc2737d0c0e3371661f647555a.25a8220c089bdd3ea3efb745d4bf0389",
-    "scope": "ZohoProjects.portals.READ ZohoProjects.projects.ALL ZohoProjects.tasks.ALL ZohoProjects.users.READ ZohoProjects.custom_fields.READ",
-    "api_domain": "https://www.zohoapis.ca",
-    "token_type": "Bearer",
-    "expires_in": 3600
-}
-
--------------------------------------------------
-
-    "access_token": "1000.39797936c02569815e75301aa04120f7.208b60f9bf46819fcb1d64be54292081",
-    "refresh_token": "1000.210f80b5e273025c60616545f3a37fed.4aeb16491e9dce065e5b665da1964877",
-    "scope": "ZohoProjects.portals.READ ZohoProjects.projects.READ ZohoProjects.users.READ ZohoProjects.tasks.READ ZohoProjects.tasks.CREATE",
-    "api_domain": "https://www.zohoapis.ca",
-    "token_type": "Bearer",
-    "expires_in": 3600
 
 -------------------------------------------------
 

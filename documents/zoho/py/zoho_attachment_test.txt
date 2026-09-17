@@ -1,0 +1,1 @@
+Scriptronaut Beta Manager attachment API test.
