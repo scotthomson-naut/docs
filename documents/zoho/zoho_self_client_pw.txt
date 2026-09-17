@@ -20,6 +20,19 @@ UI Panel                       18662000000047879
 UVs                            18662000000047941
 
 -------------------------------------------------
+1000.a77e53ef0004eee5f57465e121fdaba1.8f8e53600c2cc0d028760563e81972a8
+{
+    "access_token": "1000.38170afdfeceb6b84451ec65adac5f15.1e5e6f0984548ddc2a51c83aa6b8372f",
+    "refresh_token": "1000.a7c2ea265ba53b5494a25a4fe5e3c998.6dd1beb4ad7d14fc677083e42cb3524e",
+    "scope": "ZohoProjects.portals.READ ZohoProjects.portals.CREATE ZohoProjects.projects.ALL ZohoProjects.tasks.ALL ZohoProjects.tasklists.READ ZohoProjects.users.READ ZohoProjects.custom_fields.READ ZohoProjects.tags.ALL WorkDrive.workspace.ALL WorkDrive.files.ALL",
+    "api_domain": "https://www.zohoapis.ca",
+    "token_type": "Bearer",
+    "expires_in": 3600
+}
+
+
+
+-------------------------------------------------
 1000.cf83f854d888d4f170c4cfb5e5fb995b.e1c03524a68a0081c49db73a3dc87bec
 {
     "access_token": "1000.e3db1ed2254a7fef915b51b4649838e9.53c4d68cbc13c38faeb5e8806d830803",
