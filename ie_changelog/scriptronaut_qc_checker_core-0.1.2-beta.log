@@ -3,8 +3,9 @@
 ## 0.1.2-beta - 2026-10-07
 
 ### Fixed
-* Rendering check "Triangle Budget" increased the "maximum possible user settings"
-
-### Added
-* New Settings here ...
+* In **Materials** check **Color Space Valid**:
+  * Trace through Color Ramp/Math/Mix nodes instead of classifying by socket name.
+  * Subsurface Radius is now Non-Color.
+  * Use Blender's is_data flag; remove Required Colorspace setting (will now work no matter what OCIO is loaded).
+  * Flag color textures (Base Color etc.) set to Non-Color; Fix sets them to sRGB.
 
